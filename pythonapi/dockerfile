@@ -1,0 +1,9 @@
+FROM python:3.8.5
+#make a directory named as app
+RUN mkdir /app1
+WORKDIR /app1
+ADD . /app1/
+RUN pip3 install -r ./src/requirements.txt
+
+EXPOSE 5000
+CMD ["python", "/app1/src/main.py"]
